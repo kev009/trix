@@ -1,0 +1,15 @@
+main()
+{
+}
+
+
+timeout(f, t)
+int	(*f)();
+{
+	static	hndl_t	timer = NULLHNDL;
+
+	if(timer == NULLHNDL) {
+		/* first time through set it all up */
+		timer = t_LOOKUP(envhndl, "dev/resource/TIMER", CONNECT_ASIS);
+		if(timer == NULLHNDL) {
+		

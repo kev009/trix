@@ -1,0 +1,13 @@
+504,505c504,512
+< 		/* compute read ahead block number */
+< 		rabn = imap(ip, (offset+BSIZE)>>BSHIFT, READ);
+---
+> 		/* find length of contiguous read and compute read ahead block */
+> 		rabn = bn;
+> 		i = 1;
+> 		do {
+> 			if((rabn = imap(ip, (offset>>BSHIFT) + i, READ) != bn + i)
+> 				break;
+> 		}  while(n + (++i<<BSHIFT) <= count);
+> 		n = min(n + (i<<BSHIFT), count);
+> 

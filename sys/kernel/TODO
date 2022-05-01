@@ -1,0 +1,89 @@
+*^S ^Q on serial port	jat
+*unix lib	jat
+*readable fsys	jon
+*env		jat
+*sync		jon
+*sh		jat
+*interrupts	jat
+*block cache	jon
+*writeable fsys	jon
+*speedup	jon
+*  s_copy
+*  s_read
+*  s_write
+*  sbrk extra
+*  s_expand
+*  trap:bcopy
+*  dk:getcache(0:READ)
+*  stdio BUFSIZ
+*khandle goes away
+*tty		jon
+*real multiproc	jon
+*scatter load	dg
+*port to TI-NU	dg
+*have DOMAIN take LOAD message  jon
+*pipes		jat
+*multivolume filesystem	jon
+*preemtive schd and dosched on wakeup	jon
+*ee		doug
+*recall handle	jon
+*inode cache of indirect pointers (8 or so)
+*interrupt disk	jon
+*emacs editor that ties into running commands in windows (ie windows can be	jma
+   used instead of pipes)
+*dev mem	jon
+*star matching in tsh	dg
+*network (as server)	dg
+*softenters	dg
+*network exec (1K reads in LOAD)	dg
+*connect types (like TRUNC)	jon
+
+fast filesystem
+fast devices
+fast calls
+trix libS
+new disk
+system V writearounds
+fork
+directory read
+kernel network implementation
++window system	doug & sw
+ mouse tracking
+ mouse data in char stream
+ mouse sensitive areas
+ fonts
+tcp/ip
+chaos
+uucp
+protection
+user id's
+^S ^Q on h19 emulator
+profiling
+swapping & paging
+debugger
++recall mechanism  jon
+ gc		jon
+*  handles/ports
+*  close messages
+*  CLOSE and DUP become calls again
+   subdomain
+   domains
+trixcmd proc	sw
+open recurse in env
+dev request speedup
+410 files
+  use data cache on text
+  shared text
+use data cache on screen (for single cpu)
+cartridge tape driver
++terman disk driver	dg
+debugger
+csh
+sh
+tsh pipes
+multi processor
+active inode encapsulator
+search path cache (mostly for net)
+286 port
+video disk fron end (read only access with date change for SCCS)
+last-N-files in memory cache

@@ -1,0 +1,39 @@
+Priorities of threads are relevant only among threads in one domain!
+There is no instant preemption of low-priority threads by high priority ones.
+
+K_REQUEST:
+ Takes handle and message, and starts thread thru handle with that message.
+
+K_ERPLY:
+ Destroys current thread, wakes up the one that requested this one.
+
+K_RELAY:
+ Like tail-recursive K_REQUEST.
+
+K_SPAWN:
+ entry = address to start new thread at.
+ passport = arg to pass to it.
+ relative priority within domain.
+
+K_SPL thread sets its own priority-within-domain.
+
+K_CLOSE takes a handle and gives up use of it.
+Handles are represented by numbers that are meaningful
+only to the kernel and that are handed out by the kernel.
+This returns immediately but if port now has no handles
+a thread will be spawned to do a close message on that port.
+This thread has no parent.
+
+K_DUP given one handle makes a duplicate handle.
+Since passing a handle in a request removes your access
+you must DUP the handle first if you want to keep it.
+
+K_MAKEPORT creates a port in your domain, returning
+handle number of the initial handle on that domain.
+
+K_FOLD given a handle says whether it is a handle on 
+the current domain.  If it is, it gives you the
+entry and passport values of the handle.
+It also closes the port.
+
+K_RECALL does a recall on all children of the current thread.
